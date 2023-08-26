@@ -34,7 +34,8 @@ const questions = [
     {
         type: 'lsit',
         message: '',
-        name: '',
+        choices: licenseChoices,
+        name: 'license',
     },
     {
         type: 'input',
