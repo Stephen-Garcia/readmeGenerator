@@ -2,6 +2,8 @@
 const inquire = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
+
+const licenseChoices =['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2,0']
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -30,7 +32,7 @@ const questions = [
         name: '',
     },
     {
-        type: 'input',
+        type: 'lsit',
         message: '',
         name: '',
     },
@@ -49,3 +51,14 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+
+
+
+
+
+
+
+const licenseColor = [
+
+]
