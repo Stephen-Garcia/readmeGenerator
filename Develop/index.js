@@ -8,39 +8,49 @@ const licenseChoices =['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla 
 const questions = [
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'What is you project title?',
+        name: 'title',
     },
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'Please give a description of the project.',
+        name: 'description',
     },
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'Please give installation instructions so others can use this.',
+        name: 'installation',
     },
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'Describe the usage of this project such as technologies or packages used.',
+        name: 'usage',
     },
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'Please add also contributors and sources.',
+        name: 'contributions',
+    },
+    {
+        type: 'input',
+        message: 'What are the test instructions for this project?',
+        name: 'tests',
     },
     {
         type: 'lsit',
-        message: '',
+        message: 'Choose all licenses that apply to this project.',
         choices: licenseChoices,
         name: 'license',
     },
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: 'PLease enter your GitHub username.',
+        name: 'github',
+    },
+    {
+        type: 'input',
+        message: 'Please enter you email.',
+        name: 'email',
     },
 ];
 
