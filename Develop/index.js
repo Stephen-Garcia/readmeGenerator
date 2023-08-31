@@ -1,9 +1,9 @@
 // TODO: Include packages needed for this application
 const inquire = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js')
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
-const licenseChoices =['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2,0']
+const licenseChoices =['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0']
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -28,7 +28,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Please add also contributors and sources.',
+        message: 'Please say how to contribute to this project which includes reporting issues.',
         name: 'contributions',
     },
     {
@@ -55,10 +55,23 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file This might be like lines 50-56 in the mini project
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data) {
+        err ? console.error(err) : console.log('Thank you for using my README generator! Checkout you README!')
+    }
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((response) => {
+            console.log(response);
+            const data = readme(response)
+            writeToFile('README.md', data, (err) =>
+            err ? console.error(err) : console.log('Error'))
+        })
+};
 
 // Function call to initialize app
 init();
