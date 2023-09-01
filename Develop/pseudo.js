@@ -1,4 +1,4 @@
-/ TODO: Include packages needed for this application
+// / TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const licenseChoices = ['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'];
