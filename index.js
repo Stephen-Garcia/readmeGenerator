@@ -1,8 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
 const path = require('path');
+const licenseChoices = ['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'];
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -40,7 +41,7 @@ const questions = [
         type: 'lsit',
         message: 'Choose all licenses that apply to this project:',
         name: 'license',
-        choices: ['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'],
+        choices: licenseChoices,
     },
     {
         type: 'input',
