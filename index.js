@@ -29,12 +29,12 @@ const questions = [
     {
         type: 'input',
         message: 'Please say how to contribute to this project which includes reporting issues.',
-        name: 'contributions',
+        name: 'guidelines',
     },
     {
         type: 'input',
         message: 'What are the test instructions for this project?',
-        name: 'tests',
+        name: 'test',
     },
     {
         type: 'lsit',
@@ -54,6 +54,17 @@ const questions = [
     },
 ];
 
+fs.writeFile('user_info.html', htmlContent, err => {
+    if (err) {
+      console.error('Error writing HTML file:', err);
+    } else {
+      console.log('HTML file created successfully!');
+    }
+  });
+})
+.catch(error => {
+  console.error('An error occurred:', error);
+});
 // TODO: Create a function to write README file This might be like lines 50-56 in the mini project
 // function writeToFile(fileName, data) {
 //     fs.writeFile(path.join(process.cwd(), fileName), data);
