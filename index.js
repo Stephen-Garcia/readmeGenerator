@@ -5,7 +5,7 @@ const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
 const licenseChoices = ['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'];
 
 // TODO: Create an array of questions for user input
-const questions = [
+const questions =[
     {
         type: 'input',
         message: 'What is you project title?',
@@ -52,34 +52,43 @@ const questions = [
         message: 'Please enter you email.',
         name: 'email',
     },
-];
+]
 
-fs.writeFile('user_info.html', htmlContent, err => {
-    if (err) {
-      console.error('Error writing HTML file:', err);
-    } else {
-      console.log('HTML file created successfully!');
-    }
-  });
-})
-.catch(error => {
-  console.error('An error occurred:', error);
-});
 // TODO: Create a function to write README file This might be like lines 50-56 in the mini project
+inquirer.prompt(questions)
+.then((answers) => {
+    const readmeContent = generateMarkdown(answers);
+
+    fs.writeFile('README.md', readmeContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created your README!')
+    );
+  });
+  // Function call to initialize app
+  init();
+
+  // TODO: Create a function to initialize app
+  // function init() {
+  //   inquirer.prompt(questions).then((response) => {
+  //     console.log(response);
+  //     writeToFile("Readme.md", generateMarkdown({ ...response }));
+  //   });
+// fs.writeFile('user_info.html', htmlContent, err => {
+//     if (err) {
+//       console.error('Error writing HTML file:', err);
+//     } else {
+//       console.log('HTML file created successfully!');
+//     }
+//   });
+// })
+// .catch(error => {
+//   console.error('An error occurred:', error);
+// });
 // function writeToFile(fileName, data) {
 //     fs.writeFile(path.join(process.cwd(), fileName), data);
 // }
 
-// TODO: Create a function to initialize app
-// function init() {
-//   inquirer.prompt(questions).then((response) => {
-//     console.log(response);
-//     writeToFile("Readme.md", generateMarkdown({ ...response }));
-//   });
 // }
 
-// Function call to initialize app
-init();
 
 // const licenseColor = [
 
