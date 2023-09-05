@@ -14,11 +14,10 @@ function renderLicenseSection(license) {}
 
 
 // TODO: Create a function to generate markdown for README This will most likely be like copying a raw readme with # marks
-function (generateMarkdown = ([{ title, description, installation, usage, license, guidelines, test, github, email }]) =>
-          // const choiceIndex = licenseChoices.indexOf(license)
-          // console.log(licenseColor[choiceIndex])
-
-`# ${title}
+// const choiceIndex = licenseChoices.indexOf(license)
+// console.log(licenseColor[choiceIndex])
+function generateMarkdown(answers) {
+`# ${answers.title}
 # Table of Contents
 [Description](#description)
 [Installation](#installation)
@@ -28,19 +27,19 @@ function (generateMarkdown = ([{ title, description, installation, usage, licens
 [Test](#test)
 [Questions](#questions)
 # Description
-${description}
+${answers.description}
 # Installation
-${installation}
+${answers.installation}
 # Usage
-${usage}
+${answers.usage}
 # License
 ![](https://img.shields.io/badge/License-${licenseColor[licenseChoices]}.svg)
 # Contribution-Guidelines
-${guidelines}
+${answers.guidelines}
 # Test
-${test}
+${answers.test}
 # Questions
-${github}
-${email}`);
+${answers.github}
+${answers.email}`};
 
 module.exports = generateMarkdown;
