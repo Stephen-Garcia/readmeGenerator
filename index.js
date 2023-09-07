@@ -39,8 +39,8 @@ const questions =[
     {
         type: 'lsit',
         message: 'Choose all licenses that apply to this project:',
-        name: 'license',
         choices: licenseChoices,
+        name: 'license',
     },
     {
         type: 'input',
@@ -55,16 +55,22 @@ const questions =[
 ]
 
 // TODO: Create a function to write README file This might be like lines 50-56 in the mini project
-inquirer.prompt(questions)
-.then((answers) => {
-    const readmeContent = generateMarkdown(answers);
-    fs.writeFile('README.md', readmeContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created your README!')
-    );
-  });
+function writeToFile(filename, data) {
+
+    fs.writeFile(filename, data, (err) =>
+        err ? console.log(err) : console.log('Thanks for the input! Checkout your README.'));
+};
 //   TODO: Create a function to initialize app
   function init() {
+    inquirer
+        .prompt(questions)
+        .then((response) => {
+            console.log(response);
+            const data = generateMarkdown(response);
 
+            writeToFile('README.md', data, (err) =>
+                err ? console.log(err) : console.log('Thanks for the input! Checkout your README.'))
+        });
     };
   // Function call to initialize app
   init();
