@@ -1,7 +1,5 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const licenseChoices =['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'];
-
 function renderLicenseBadge(license) {
     if (license === "GNU AGPLv3") {
       return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
@@ -30,12 +28,8 @@ function renderLicenseSection(license) {}
 
 
 // TODO: Create a function to generate markdown for README This will most likely be like copying a raw readme with # marks
-function generateMarkdown({ title, description, installation, usage, license, guidelines, test, github, email }) {
-    const licenseColor = ['IPL_1.0-blue', 'MIT-yellow', 'ISC-blue', 'MPL_2.0-brightgreen']; 
-            const choiceIndex = licenseChoices.indexOf(license)
-            console.log(licenseColor[choiceIndex])
-           return `
-            # ${title}
+function generateMarkdown(data) {
+    return `# ${data.title} 
 # Table of Contents
 [Description](#description)
 [Installation](#installation)
@@ -45,20 +39,21 @@ function generateMarkdown({ title, description, installation, usage, license, gu
 [Test](#test)
 [Questions](#questions)
 # Description
-${description}
+${data.description}
 # Installation
-${installation}
+${data.installation}
 # Usage
-${usage}
+${data.usage}
 # License
 ${renderLicenseBadge(data.license)}
 This application is covered by the ${data.license} license. 
 # Contribution-Guidelines
-${guidelines}
+${data.guidelines}
 # Test
-${test}
+${data.test}
 # Questions
-${github}
-${email}`};
+${data.github}
+${data.email}`
+};
 
 module.exports = generateMarkdown;

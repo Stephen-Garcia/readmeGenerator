@@ -2,10 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const licenseChoices = ['IBM Public License Version 1.0', 'MIT', 'ISC', 'Mozilla Public License 2.0'];
-
+const path = require("path");
 // TODO: Create an array of questions for user input
-const questions =[
+const questions = [
     {
         type: 'input',
         message: 'What is you project title?',
@@ -37,12 +36,6 @@ const questions =[
         name: 'test',
     },
     {
-        type: 'lsit',
-        message: 'Choose all licenses that apply to this project:',
-        choices: licenseChoices,
-        name: 'license',
-    },
-    {
         type: 'input',
         message: 'PLease enter your GitHub username.',
         name: 'github',
@@ -52,26 +45,39 @@ const questions =[
         message: 'Please enter you email.',
         name: 'email',
     },
-]
-
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Select a license:',
+        choices: [
+            'GNU AGPLv3',
+            'GNU GPLv3',
+            'GNU LGPLv3',
+            'Mozilla',
+            'MIT',
+            'Apache',
+            'Open',
+          ],
+    },
+];
 // TODO: Create a function to write README file This might be like lines 50-56 in the mini project
-function writeToFile(filename, data) {
-
-    fs.writeFile(filename, data, (err) =>
-        err ? console.log(err) : console.log('Thanks for the input! Checkout your README.'));
-};
+function writeToFile(fileName, data) {
+    fs.writeFileSync(path.join(process.cwd(), fileName), data);
+    console.log('Thanks for the input! Checkout your README.');
+  }
 //   TODO: Create a function to initialize app
-  function init() {
-    inquirer
-        .prompt(questions)
-        .then((response) => {
-            console.log(response);
-            const data = generateMarkdown(response);
-
-            writeToFile('README.md', data, (err) =>
-                err ? console.log(err) : console.log('Thanks for the input! Checkout your README.'))
-        });
-    };
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+      console.log(answers);
+      writeToFile(
+        "README.md",
+        generateMarkdown({
+          ...answers,
+        })
+      );
+    });
+  };
+  
   // Function call to initialize app
   init();
 
