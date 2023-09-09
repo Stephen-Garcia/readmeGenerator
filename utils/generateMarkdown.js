@@ -30,7 +30,7 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README This will most likely be like copying a raw readme with # marks
 function generateMarkdown(data) {
     return `# ${data.title} 
-# Table of Contents
+## Table of Contents
 [Description](#description)
 [Installation](#installation)
 [Usage](#usage)
@@ -38,22 +38,23 @@ function generateMarkdown(data) {
 [Contribution-Guidelines](#guidelines)
 [Test](#test)
 [Questions](#questions)
-# Description
+## Description
 ${data.description}
-# Installation
+## Installation
 ${data.installation}
-# Usage
+## Usage
 ${data.usage}
-# License
+## License
 ${renderLicenseBadge(data.license)}
 This application is covered by the ${data.license} license. 
-# Contribution-Guidelines
+## Contribution-Guidelines
 ${data.guidelines}
-# Test
+## Test
 ${data.test}
-# Questions
-${data.github}
-${data.email}`
+## Video/Images
+## Questions
+GitHub: https://github.com/${data.github},
+Email: ${data.email}`
 };
 
 module.exports = generateMarkdown;
