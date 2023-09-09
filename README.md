@@ -1,4 +1,4 @@
-# werwer 
+# README Generator 
 # Table of Contents
 [Description](#description)
 [Installation](#installation)
@@ -8,18 +8,18 @@
 [Test](#test)
 [Questions](#questions)
 # Description
-werwerw
+This is a README generator to help make awewsome READMEs!
 # Installation
-werwerwe
+First clone the repo. Then run "npm init". Then run "npm i inquirer@8.2.4" to install the correct inquirer version. Then run "node index.js" to start the application.
 # Usage
-werwer
+The technologies used to make this project were JavaScript, NODEjs, and the npm package Inquirer.
 # License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-This application is covered by the MIT license. 
+[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+This application is covered by the Open license. 
 # Contribution-Guidelines
-werwer
+You can contribute by making pull requests in the repo or by contacting me through GitHub or my email.
 # Test
-werwer
+There are no test instructions at this time.
 # Questions
-werwer
-werwer
+Stephen-Garcia
+garciastephen5280@gmail.com

@@ -16,7 +16,7 @@ function renderLicenseBadge(license) {
     } else {
       return "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
     }
-  }
+  };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
