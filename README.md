@@ -1,4 +1,4 @@
-# README Generator 
+# README Generator  
 ## Table of Contents
 [Description](#description)
 [Installation](#installation)
@@ -20,6 +20,7 @@ This application is covered by the Open license.
 You can contribute by making pull requests in the repo or by contacting me through GitHub or my email.
 ## Test
 There are no test instructions at this time.
+## Video/Images
 ## Questions
 GitHub: https://github.com/Stephen-Garcia,
 Email: garciastephen5280@gmail.com
