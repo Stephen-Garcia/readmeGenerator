@@ -80,27 +80,3 @@ function init() {
   
   // Function call to initialize app
   init();
-
-//       writeToFile("Readme.md", generateMarkdown({ ... }));
-//     });
-// fs.writeFile('user_info.html', htmlContent, err => {
-//     if (err) {
-//       console.error('Error writing HTML file:', err);
-//     } else {
-//       console.log('HTML file created successfully!');
-//     }
-//   });
-// })
-// .catch(error => {
-//   console.error('An error occurred:', error);
-// });
-// function writeToFile(fileName, data) {
-//     fs.writeFile(path.join(process.cwd(), fileName), data);
-// }
-
-// }
-
-
-// const licenseColor = [
-
-// ]
